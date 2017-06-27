@@ -26,7 +26,8 @@ They help you gather information from thirdparty sources...<br /><br />
 # Recon-ng
 
 ### Recon-ng
-- written Python 3
+- written in Python 3
+- easy to understand
 - easy to use
 - easy to extend
 - usage is similar to Metasploit
@@ -45,12 +46,12 @@ to compete with existing frameworks, as it is designed
 exclusively for web-based open source reconnaissance.** *
 
 #### From the author<br />
-If you want to exploit...<br />
+*If you want to exploit...<br />
 ... use the Metasploit Framework.<br /><br />
 If you want to social engineer<br />
 ... use the Social-Engineer Toolkit.<br /><br />
 If you want to conduct reconnaissance<br />
-... use **Recon-ng**!
+... use **Recon-ng**!*
 
 ---
 
@@ -212,6 +213,7 @@ Information about the github profile have been added.
   | 1     | Chris      |             | Wanstrath | chris@github.com        | Github Contributor at @github                                                        | San Francisco |         | github_users |
   +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ```
+You can also **show** the contents of the database directly.
 
 ---
 
