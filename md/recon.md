@@ -1,4 +1,4 @@
-# Reckon-ng
+# Recon-ng
 a web reconnaisance framework
 
 ---
@@ -23,11 +23,14 @@ They help you gather information from thirdparty sources...<br /><br />
 
 ---
 
-# Reckon-ng
+# Recon-ng
 
-- written in Python 3
+### Recon-ng
+- written Python 3
 - easy to use
 - easy to extend
+- usage is similar to Metasploit
+- allows to interact with data in SQL style
 
 ### Author
 Tim Tomes AKA LaNMaSteR53
@@ -166,7 +169,7 @@ Source Options:
 **Show** the information about the module.
 
 ### Multiple input types
-You can perform the reconnaisance for one or few selected inputs (`<string>`, `<path>`) or let reckon-ng perform it for the whole database.
+You can perform the reconnaisance for one or few selected inputs (`<string>`, `<path>`) or let recon-ng perform it for the whole database.
 
 ```
 [recon-ng][default][github_users] > set SOURCE defunkt
