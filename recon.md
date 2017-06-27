@@ -219,7 +219,7 @@ You can also **show** the contents of the database directly.
 
 # Development
 
-Recon-ng is a modular framework. The structure of the modules makes it very easy to contribute. A detailed development guide is available [here](https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Development%20Guide).
+Recon-ng is a modular framework. The structure of the modules makes it **very easy to contribute**. A detailed development guide is available [here](https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Development%20Guide).
 
 ### Basic module template
 ```
@@ -273,9 +273,7 @@ class Module(BaseModule):
 
 ---
 
-# Our work
-
-As a part of subject on our Master's studies, we were 
+# Our contribution
 
 Goldenline
 
@@ -283,8 +281,10 @@ Facebook
 
 NK
 
+---
+
 ### Who are we
-We are students on AGH University of Science and Technology in Kraków, Poland. 
+We are Master's students at AGH University of Science and Technology in Kraków, Poland. 
 ![AGH](img/agh.jpg)
 
 ### Who are we
