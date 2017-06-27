@@ -217,15 +217,65 @@ You can also **show** the contents of the database directly.
 
 ---
 
-# Architecture
+# Development
 
-```python
-code code sample code
+Recon-ng is a modular framework. The structure of the modules makes it very easy to contribute. A detailed development guide is available [here](https://bitbucket.org/LaNMaSteR53/recon-ng/wiki/Development%20Guide).
+
+### Basic module template
+```
+from recon.core.module import BaseModule
+ 
+class Module(BaseModule):
+ 
+    meta = {
+        # metadata
+    }
+ 
+    def module_run(self, input):
+        # do something with input and save to db
+```
+
+### Metadata
+```
+{
+  'name': 'Hostname Resolver',
+  'author': 'Tim Tomes (@LaNMaSteR53)',
+  'version': 'v0.0.1',
+  'description': 'Resolves IP addresses to hosts and updates the database with the results.',
+  'required_keys': ['webdns_api', 'webdns_secret'], // required API keys
+  'comments': (
+      'Nameserver must be in IP form.',
+      'e.g. 1.2.3.4',
+  ),
+  'query': 'SELECT DISTINCT host FROM hosts WHERE host IS NOT NULL', // SQL query for default input
+  'options': ( 
+      ('nameserver', '8.8.8.8', 'yes', 'ip address of a valid nameserver'), // CLI options
+  ),
+}
+```
+
+### Threads
+```
+from recon.core.module import BaseModule
+ 
+class Module(BaseModule):
+ 
+    # ...
+ 
+    def module_run(self, inputs):
+        # ...
+        for input in inputs:
+            self.thread(hosts, input)
+ 
+    def module_thread(self, input)
+        # do something with every single input in threads
 ```
 
 ---
 
 # Our work
+
+As a part of subject on our Master's studies, we were 
 
 Goldenline
 
@@ -233,10 +283,19 @@ Facebook
 
 NK
 
----
+### Who are we
+We are students on AGH University of Science and Technology in Kraków, Poland. 
+![AGH](img/agh.jpg)
 
-# Who are we
+### Who are we
+Our major is Teleinformatics (**Teleinformatyka**) - an intersection of computer science, telecommunications and signal analysis.<br />
+More info can be found [here](http://teleinformatyka.kt.agh.edu.pl/) (Polish only).
 
-Teleinformatyka AGH
-
-EET
+### Thank you!
+Dominik Rosiek ([@Wolodija](https://github.com/Wolodija))<br />
+Paweł Nogieć<br />
+Grzegorz Pietrusza<br />
+Michał Bardzinski<br />
+Daniel Slusarczyk<br />
+Tomasz Jaśkowiec<br />
+Antoni Grzanka ([@anteq](https://github.com/anteq))
