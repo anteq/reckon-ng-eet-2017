@@ -13,13 +13,13 @@ That's why we have...
 ### web reconnaisance frameworks
 
 They help you gather information from thirdparty sources...<br /><br />
-![Gather](../img/world.png)
+![Gather](img/world.png)
 
 ... keep track of the data that you already have ...<br /><br />
-![Track](../img/sort.png)
+![Track](img/sort.png)
 
 ... and discover useful connections between your entries.<br /><br />
-![Discover](../img/connect.png)
+![Discover](img/connect.png)
 
 ---
 
