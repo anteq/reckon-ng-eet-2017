@@ -295,7 +295,7 @@ More info can be found [here](http://teleinformatyka.kt.agh.edu.pl/) (Polish onl
 Dominik Rosiek ([@Wolodija](https://github.com/Wolodija))<br />
 Paweł Nogieć<br />
 Grzegorz Pietrusza<br />
-Michał Bardzinski ([@Coenova123](https://github.com/Coenova123))<br />
-Daniel Slusarczyk ([@danslu](https://github.com/danslu))<br />
+Michał Bardziński ([@Coenova123](https://github.com/Coenova123))<br />
+Daniel Ślusarczyk ([@danslu](https://github.com/danslu))<br />
 Tomasz Jaśkowiec<br />
 Antoni Grzanka ([@anteq](https://github.com/anteq))
