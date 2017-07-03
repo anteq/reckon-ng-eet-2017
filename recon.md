@@ -286,7 +286,7 @@ Nasza Klasa (pl. *Our Class*) is one of the most popular Polish social web apps,
 A successful implementation would allow us to get origin cities of profiles as well as discover connections between them.
 
 #### Research
-- there is official [API](http://developers.nk.pl/documentation/nk-api/), but seems not actively developed
+- there is official [API](http://developers.nk.pl/documentation/nk-api/), but doesn't seem to be actively developed
 - available endpoints seem to cover our needs
 - we've discovered *semi-official* user search by sniffing XHR requests `http://nk.pl/szukaj/profile/js?autocompleter=1&q=janusz`
 
@@ -304,7 +304,7 @@ Without official search, we cannot obtain ID of user, and, therefore, cannot get
 #### Let's try again...
 # Facebook
 
-An useful implementation would work on company name and use *people who work at <>* Facebook query to get names and surnames of its employees.
+An useful implementation would work on company name and use `people who work at *` Facebook query to get names and surnames of its employees.
 
 #### Research
 - there were several attempts of making such plugin...
@@ -312,7 +312,7 @@ An useful implementation would work on company name and use *people who work at 
 - Facebook has a [very extensive API](https://developers.facebook.com/)
 
 #### Problems
-- API does not support *people who work at <>* search
+- API does not support `people who work at *` queries
 - webpage is complicated and is difficult to scrap
 - different pages have very different structure (probably to prevent automatic scrapping, like the one that we are trying to do)
 
@@ -324,7 +324,7 @@ Few hours of fiddling with RegExps and we got a successful implementation and sc
 
 #### Final status
 ### ...but it doesn't any more :(
-After a few days, it turned out that Facebook has completely changed the structure of their pages and the module is not working. None of the RegExps that we used works.
+After a few days, it turned out that Facebook has completely changed the structure of their pages and the module is not working. None of the RegExps that we used work.
 
 ---
 
@@ -343,11 +343,15 @@ Goldenline is a Polish professional networking app, similar to LinkedIn. There a
 #### Problems
 - unable to easily obtain API token - fortunately there's [HAL Browser](https://www.goldenline.pl/aplikacja/hal-browser/#https://api.goldenline.pl/)
 
-### Final status: it works!
+#### Final status
+### It works!
 The module is located in **companies-contacts** - it enumerates employees based of given companies.<br />
-https://bitbucket.org/LaNMaSteR53/recon-ng/pull-requests/262/add-module-companies-contacts-for/diff
+[Pull request to Reckon-ng repo](https://bitbucket.org/LaNMaSteR53/recon-ng/pull-requests/262/add-module-companies-contacts-for/diff)
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/cGXXWIjc4KU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+As seen on the movie, after too many requests plugin stops and we are asked to solve a CAPTCHA in order to prove that we are human.
+![CAPTCHA](img/captcha.png)
 
 ---
 
