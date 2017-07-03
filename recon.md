@@ -273,13 +273,81 @@ class Module(BaseModule):
 
 ---
 
-# Our contribution
+# Our contibution
 
-Goldenline
+---
 
-Facebook
+#### It's easy, right?
+# Nasza Klasa
 
-NK
+![Nasza Klasa screenshot](img/nk.jpg)
+
+Nasza Klasa (pl. *Our Class*) is one of the most popular Polish social web apps, connecting old friends from school or youth. It's estimated to have around 7 000 000 active users.<br /><br />
+A successful implementation would allow us to get origin cities of profiles as well as discover connections between them.
+
+#### Research
+- there is official [API](http://developers.nk.pl/documentation/nk-api/), but seems not actively developed
+- available endpoints seem to cover our needs
+- we've discovered *semi-official* user search by sniffing XHR requests `http://nk.pl/szukaj/profile/js?autocompleter=1&q=janusz`
+
+#### Problems
+- in official API we can send requests about users only when we have the ID of user
+- *semi-official* search returns only 5 items (and account is blocked when too many requests are sent)...
+- ... plus these results are based on the profile that you're logged in (favours people in your network)
+
+#### Final result
+### It (probably) won't work
+Without official search, we cannot obtain ID of user, and, therefore, cannot get any useful information on him. **Matching users based only on names and surnames is too risky.**
+
+---
+
+#### Let's try again...
+# Facebook
+
+An useful implementation would work on company name and use *people who work at <>* Facebook query to get names and surnames of its employees.
+
+#### Research
+- there were several attempts of making such plugin...
+- ... but [there were problems with them](https://bitbucket.org/LaNMaSteR53/recon-ng/issues/151/facebook-module-error)
+- Facebook has a [very extensive API](https://developers.facebook.com/)
+
+#### Problems
+- API does not support *people who work at <>* search
+- webpage is complicated and is difficult to scrap
+- different pages have very different structure (probably to prevent automatic scrapping, like the one that we are trying to do)
+
+#### Final status
+### It worked...
+Few hours of fiddling with RegExps and we got a successful implementation and scrapped a few thousands of employees.
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/dOV71FPTcdk?rel=0" frameborder="0" allowfullscreen></iframe>
+
+#### Final status
+### ...but it doesn't any more :(
+After a few days, it turned out that Facebook has completely changed the structure of their pages and the module is not working. None of the RegExps that we used works.
+
+---
+
+#### Third time's a charm?
+# Goldenline
+
+![Goldenline screenshot](img/goldenline.jpg)
+
+Goldenline is a Polish professional networking app, similar to LinkedIn. There are profiles of companies as well as profiles of professionals, looking for job of advice.
+
+#### Research
+- there is official, well-documented [API](https://github.com/GoldenLine/API)
+- list of company's employees can be obtained via `GET /firms/{id}/employees`
+- companies search can be implemented via parsing the site `http://www.goldenline.pl/firmy/szukaj/?q=Microsoft`
+
+#### Problems
+- unable to easily obtain API token - fortunately there's [HAL Browser](https://www.goldenline.pl/aplikacja/hal-browser/#https://api.goldenline.pl/)
+
+### Final status: it works!
+The module is located in **companies-contacts** - it enumerates employees based of given companies.<br />
+https://bitbucket.org/LaNMaSteR53/recon-ng/pull-requests/262/add-module-companies-contacts-for/diff
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/cGXXWIjc4KU?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ---
 
@@ -293,9 +361,9 @@ More info can be found [here](http://teleinformatyka.kt.agh.edu.pl/) (Polish onl
 
 ### Thank you!
 Dominik Rosiek ([@Wolodija](https://github.com/Wolodija))<br />
-Paweł Nogieć<br />
-Grzegorz Pietrusza<br />
-Michał Bardziński ([@Coenova123](https://github.com/Coenova123))<br />
+Grzegorz Pietrusza([@jifwin](https://github.com/jifwin))<br />
 Daniel Ślusarczyk ([@danslu](https://github.com/danslu))<br />
+Antoni Grzanka ([@anteq](https://github.com/anteq))<br />
+Michał Bardziński<br />
 Tomasz Jaśkowiec<br />
-Antoni Grzanka ([@anteq](https://github.com/anteq))
+Paweł Nogieć<br />
