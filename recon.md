@@ -7,12 +7,12 @@ a web reconnaisance framework
 
 Before you start an active attack it's really useful to **gather as much information** on your target as possible.
 
-However, collecting all the information and keeping track of all data (e-mails, logins, accounts, names...) is rather a **repetitive and tedious task**.
+However, collecting all the information and keeping track of all the data (e-mails, logins, accounts, names...) is rather a **repetitive and tedious task**.
 
 That's why we have...
 ### web reconnaisance frameworks
 
-They help you gather information from thirdparty sources...<br /><br />
+They help you gather the information from thirdparty sources...<br /><br />
 ![Gather](img/world.png)
 
 ... keep track of the data that you already have ...<br /><br />
@@ -203,7 +203,7 @@ SUMMARY
 [*] 1 total (1 new) contacts found.
 [recon-ng][default][github_users] > 
 ```
-Information about the github profile have been added.
+GitHub profile data has been added to the database.
 
 ```
 [recon-ng][default][github_users] > show contacts
@@ -282,29 +282,29 @@ class Module(BaseModule):
 
 ![Nasza Klasa screenshot](img/nk.jpg)
 
-Nasza Klasa (pl. *Our Class*) is one of the most popular Polish social web apps, connecting old friends from school or youth. It's estimated to have around 7 000 000 active users.<br /><br />
-A successful implementation would allow us to get origin cities of profiles as well as discover connections between them.
+Nasza Klasa (pl. *Our Class*) is one of the most popular Polish social web apps, connecting old friends from school or youth with each other. It's estimated to have around 7 000 000 active users.<br /><br />
+A successful implementation would allow us to get the origin cities of people (profiles) as well as discover some connections between them.
 
 #### Research
-- there is official [API](http://developers.nk.pl/documentation/nk-api/), but doesn't seem to be actively developed
+- there is an official [API](http://developers.nk.pl/documentation/nk-api/), but doesn't seem to be actively developed
 - available endpoints seem to cover our needs
 - we've discovered *semi-official* user search by sniffing XHR requests `http://nk.pl/szukaj/profile/js?autocompleter=1&q=janusz`
 
 #### Problems
-- in official API we can send requests about users only when we have the ID of user
-- *semi-official* search returns only 5 items (and account is blocked when too many requests are sent)...
-- ... plus these results are based on the profile that you're logged in (favours people in your network)
+- in official API we can send requests about users only when we have the ID of the user
+- *semi-official* search returns only 5 items (and used account is blocked when too many requests are sent)...
+- ... moreover, these results are based on the profile that you're logged in to (favours people in your network)
 
 #### Final result
 ### It (probably) won't work
-Without official search, we cannot obtain ID of user, and, therefore, cannot get any useful information on him. **Matching users based only on names and surnames is too risky.**
+Without official search, we cannot obtain ID of the user, and, therefore, cannot get any useful information on him. **Matching users based only on names and surnames is too risky.**
 
 ---
 
 #### Let's try again...
 # Facebook
 
-An useful implementation would work on company name and use `people who work at *` Facebook query to get names and surnames of its employees.
+A useful implementation would work on company name and use `people who work at *` Facebook query to get names and surnames of its employees.
 
 #### Research
 - there were several attempts of making such plugin...
@@ -313,7 +313,7 @@ An useful implementation would work on company name and use `people who work at 
 
 #### Problems
 - API does not support `people who work at *` queries
-- webpage is complicated and is difficult to scrap
+- webpage is complicated and difficult to scrap
 - different pages have very different structure (probably to prevent automatic scrapping, like the one that we are trying to do)
 
 #### Final status
@@ -346,7 +346,7 @@ Goldenline is a Polish professional networking app, similar to LinkedIn. There a
 #### Final status
 ### It works!
 The module is located in **companies-contacts** - it enumerates employees based of given companies.<br />
-[Pull request to Reckon-ng repo](https://bitbucket.org/LaNMaSteR53/recon-ng/pull-requests/262/add-module-companies-contacts-for/diff)
+[Pull request to Reckon-ng repository](https://bitbucket.org/LaNMaSteR53/recon-ng/pull-requests/262/add-module-companies-contacts-for/diff)
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/cGXXWIjc4KU?rel=0" frameborder="0" allowfullscreen></iframe>
 
@@ -362,6 +362,9 @@ We are Master's students at AGH University of Science and Technology in Kraków,
 ### Who are we
 Our major is Teleinformatics (**Teleinformatyka**) - an intersection of computer science, telecommunications and signal analysis.<br />
 More info can be found [here](http://teleinformatyka.kt.agh.edu.pl/) (Polish only).
+
+### Who are we
+This project has been developed as part of the [Elements of ICT ecosystem](https://syllabuskrk.agh.edu.pl/2016-2017/en/magnesite/study_plans/stacjonarne-teleinformatyka--2/module/ite-2-302-s-elements-of-ict-ecosystem) course held in cooperation with Piotr Konieczny from [Niebezpiecznik.pl](https://niebezpiecznik.pl/).
 
 ### Thank you!
 Dominik Rosiek ([@Wolodija](https://github.com/Wolodija))<br />
